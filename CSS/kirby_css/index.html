@@ -1,0 +1,50 @@
+
+<style>
+    .hover-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      
+      .hover-text::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+       
+      }
+      
+      .hover-text:hover::after {
+        width: 100%;
+      }
+      
+      .hover-text:hover {
+        color: blue;
+      }
+      
+      .circle {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      
+      .circle:hover {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+    
+      <div class="hover-text">
+        Hover over me!
+      </div>
+      
+      <div class="circle"></div>
+      

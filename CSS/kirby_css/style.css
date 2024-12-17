@@ -1,0 +1,28 @@
+.card {
+    background: rgba(10, 25, 47, 0.9);
+    border: 1px solid #64ffda;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.1s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #64ffda;
+    color: #01060d;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.card-button:hover {
+    background: #50b3a2;
+}

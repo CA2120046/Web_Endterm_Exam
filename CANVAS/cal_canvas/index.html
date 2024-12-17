@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas HTML5</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      margin: 10px;
+    }
+    .canvas-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canvas HTML5</h1>
+  <div class="canvas-container">
+    <canvas id="art1" width="200" height="200"></canvas>
+    <canvas id="art2" width="200" height="200"></canvas>
+    <canvas id="art3" width="200" height="200"></canvas>
+    <canvas id="art4" width="200" height="200"></canvas>
+    <canvas id="art5" width="200" height="200"></canvas>
+    <canvas id="art6" width="200" height="200"></canvas>
+    <canvas id="art7" width="200" height="200"></canvas>
+    <canvas id="art8" width="200" height="200"></canvas>
+  </div>
+  <script>
+  
+    function drawCar(ctx) {
+      ctx.fillStyle = 'blue';
+      ctx.fillRect(50, 100, 100, 50); // Car body
+      ctx.fillStyle = 'black';
+      ctx.beginPath();
+      ctx.arc(70, 150, 10, 0, Math.PI * 2); // Left wheel
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(130, 150, 10, 0, Math.PI * 2); // Right wheel
+      ctx.fill();
+    }
+    function drawApple(ctx) {
+      ctx.fillStyle = 'red';
+      ctx.beginPath();
+      ctx.arc(100, 100, 20, 0, Math.PI * 2); // Apple body
+      ctx.fill();
+      ctx.fillStyle = 'green';
+      ctx.beginPath();
+      ctx.moveTo(100, 80);
+      ctx.lineTo(90, 70);
+      ctx.lineTo(110, 70);
+      ctx.fill(); // Apple leaf
+    }
+
+    function drawSmileyFace(ctx) {
+      // Face
+      ctx.fillStyle = 'yellow';
+      ctx.beginPath();
+      ctx.arc(100, 100, 50, 0, Math.PI * 2); // Face
+      ctx.fill();
+      
+      // Eyes
+      ctx.fillStyle = 'black';
+      ctx.beginPath();
+      ctx.arc(80, 85, 5, 0, Math.PI * 2); // Left eye
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(120, 85, 5, 0, Math.PI * 2); // Right eye
+      ctx.fill();
+      
+      // Smile
+      ctx.beginPath();
+      ctx.arc(100, 100, 30, 0, Math.PI); // Smile
+      ctx.stroke();
+    }
+
+    function drawShield(ctx) {
+      ctx.fillStyle = 'blue';
+      ctx.beginPath();
+      ctx.moveTo(100, 20);
+      ctx.lineTo(130, 60);
+      ctx.lineTo(100, 100);
+      ctx.lineTo(70, 60);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function drawLightbulb(ctx) {
+      // Bulb
+      ctx.fillStyle = 'yellow';
+      ctx.beginPath();
+      ctx.arc(100, 70, 30, 0, Math.PI * 2); // Bulb shape
+      ctx.fill();
+      
+      // Base
+      ctx.fillStyle = 'gray';
+      ctx.fillRect(85, 100, 30, 10); // Base of the bulb
+    }
+
+    function drawBottle(ctx) {
+      // Bottle body
+      ctx.fillStyle = 'green';
+      ctx.fillRect(90, 50, 20, 60); // Bottle body
+      
+      // Bottle neck
+      ctx.fillStyle = 'darkgreen';
+      ctx.fillRect(95, 30, 10, 20); // Bottle neck
+      
+      // Bottle cap
+      ctx.fillStyle = 'black';
+      ctx.fillRect(90, 25, 20, 5); // Bottle cap
+    }
+
+    function drawRaft(ctx) {
+      ctx.fillStyle = 'saddlebrown';
+      ctx.fillRect(50, 100, 100, 20); // Raft body
+      ctx.fillStyle = 'darkred';
+      ctx.fillRect(50, 90, 100, 10); // Raft top
+    }
+
+    function drawShovel(ctx) {
+      // Shovel blade
+      ctx.fillStyle = 'gray';
+      ctx.beginPath();
+      ctx.moveTo(105, 30); // Start of the blade
+      ctx.lineTo(130, 70); // Top of the blade
+      ctx.lineTo(130, 70); // Bottom right of the blade
+      ctx.lineTo(80, 70); // Bottom left of the blade
+      ctx.closePath();
+      ctx.fill();
+
+      // Shovel handle
+      ctx.fillStyle = 'brown';
+      ctx.fillRect(100, 70, 10, 60); // Handle
+    }
+
+    const artFunctions = [drawCar, drawApple, drawSmileyFace, drawShield, drawLightbulb, drawBottle, drawRaft, drawShovel];
+    document.querySelectorAll('canvas').forEach((canvas, index) => {
+      const ctx = canvas.getContext('2d');
+      artFunctions[index](ctx);
+    });
+  </script>
+</body>
+</html>

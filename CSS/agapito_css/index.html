@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Effects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Interactive Click Effects</h1>
+    
+    <div class="click-text">Click me!</div>
+  
+    <div class="circle" id="circle"></div>
+  
+    <div class="container">
+      <div class="card" onclick="showMessage('Card 1')">
+        <h2>Stylish Card 1</h2>
+        <p>This is a beautiful card component with click effects and a clean design.</p>
+        <a href="#" class="card-button">Learn More</a>
+      </div>
+    </div>
+  
+    <script>
+      document.querySelector('.click-text').addEventListener('click', function() {
+        this.style.color = 'green';
+        this.textContent = 'You clicked me!';
+      });
+  
+      const circle = document.getElementById('circle');
+      let toggled = false;
+  
+      circle.addEventListener('dblclick', function() {
+        if (!toggled) {
+          this.style.backgroundColor = 'purple';
+          this.style.width = '120px';
+          this.style.height = '120px';
+          toggled = true;
+        } else {
+          this.style.backgroundColor = 'red';
+          this.style.width = '50px';
+          this.style.height = '50px';
+          toggled = false;
+        }
+      });
+  
+      function showMessage(card) {
+        alert(card + ' was clicked!');
+      }
+    </script>
+  </body>
+  </html>

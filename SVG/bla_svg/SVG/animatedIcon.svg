@@ -1,0 +1,40 @@
+    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG Border -->
+        <rect 
+            x="0" 
+            y="0" 
+            width="300" 
+            height="300" 
+            fill="none" 
+            stroke="white" 
+            stroke-width="5" 
+        />
+
+        <!-- Star Shape with Rotation -->
+        <polygon 
+            points="150,25 180,120 275,120 200,175 230,270 150,215 70,270 100,175 25,120 120,120" 
+            fill="gold" 
+            stroke="orange" 
+            stroke-width="5"
+        >
+            <!-- Glow Animation -->
+            <animate 
+                attributeName="fill" 
+                values="gold;orange;gold" 
+                dur="2s" 
+                repeatCount="indefinite" 
+            />
+
+            <!-- Spin Animation (rotates only the star) -->
+            <animateTransform 
+                attributeType="XML" 
+                attributeName="transform" 
+                type="rotate" 
+                from="0 150 150" 
+                to="360 150 150" 
+                dur="6s" 
+                repeatCount="indefinite"
+            />
+        </polygon>
+
+    </svg>

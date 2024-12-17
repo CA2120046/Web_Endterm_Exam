@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+
+  <rect width="300" height="300" fill="#87CEEB"/> 
+
+  <g transform="translate(100, 100)">
+    <ellipse cx="50" cy="15" rx="45" ry="10" fill="#4B4B4B"/>
+    <circle cx="10" cy="25" r="5" fill="#2F4F4F"/> 
+    <circle cx="90" cy="25" r="5" fill="#2F4F4F"/>
+    <circle cx="50" cy="5" r="5" fill="#2F4F4F"/>
+  </g>
+</svg>

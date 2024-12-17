@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .frame {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    #frame1 { animation: frames 3.0s infinite; }
+    #frame2 { animation: frames 3.0s infinite 1.0s; }
+    #frame3 { animation: frames 3.0s infinite 2.0s; }
+    
+    @keyframes frames {
+      0% { opacity: 1; }
+      33.33% { opacity: 1; }
+      33.34% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div style="position: relative; width: 300px; height: 300px;">
+    <img class="frame" id="frame1" src="pixil-frame-0_1.svg">
+    <img class="frame" id="frame2" src="pixil-frame-0_2.svg">
+    <img class="frame" id="frame3" src="pixil-frame-0_3.svg">
+  </div>
+</body>
+</html>

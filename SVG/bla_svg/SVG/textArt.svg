@@ -1,0 +1,31 @@
+    <svg width="900" height="780" xmlns="http://www.w3.org/2000/svg">
+        <!-- Eye Shape Path -->
+        <defs>
+            <!-- Oval Path (Eye Outline) -->
+            <path id="ovalPath" d="M 200,390 Q 450,200 700,390 Q 450,580 200,390 Z" />
+            <!-- Circular Path (Inner Circle) -->
+            <path id="circlePath" d="M 450,390 m -180,0 a 180,180 0 1,1 360,0 a 180,180 0 1,1 -360,0" />
+        </defs>
+    
+        <!-- Text Shaping the Oval (Eye Outline) -->
+        <text font-size="20" fill="darkcyan" letter-spacing="1">
+            <textPath href="#ovalPath" startOffset="0%">
+                An eye for an eye makes the whole world blind 
+                An eye for an eye makes the whole world blind, An eye for an eye makes the whole world blind
+            </textPath>
+        </text>
+    
+        <!-- Text Inside the Circle (Pupil) -->
+        <text font-size="18" fill="darkgreen" letter-spacing="1">
+            <textPath href="#circlePath" startOffset="0%">
+                An eye for an eye makes the whole world blind, 
+                An eye for an eye makes the whole world blind,
+                An eye for an eye makes the whole world blind
+            </textPath>
+        </text>
+    
+        <!-- Centered Quote Text (Iris) -->
+        <text x="330" y="380" font-size="35" fill="mediumvioletred">An eye for an eye,</text>
+        <text x="275" y="420" font-size="30" fill="mediumvioletred">makes the whole world blind.</text>
+     
+    </svg>

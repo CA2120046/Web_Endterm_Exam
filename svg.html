@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Graphics - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg class="background-pattern" width="100%" height="100%" preserveAspectRatio="none">
+        <defs>
+            <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(100, 255, 218, 0.1)" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <nav>
+        <div class="logo">Group Portfolio</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="css.html">CSS</a></li>
+            <li><a href="svg.html">SVG</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>SVG Graphics</h1>
+        <p>Discover our SVG graphics and illustrations.</p>
+        <div class="card">
+            <h2>Calampinay - SVG</h2>
+            <div class="card-content">
+            </div>
+            <button class="card-button" onclick="openModal('calSvgModal')">Preview Cal SVG</button>
+        </div>
+
+        <div class="card">
+            <h2>Agapito - SVG</h2>
+            <div class="card-content">
+            </div>
+            <button class="card-button" onclick="openModal('carlSvgModal')">Preview Carl SVG</button>
+        </div>
+
+        <div class="card">
+            <h2>Blasurca - SVG</h2>
+            <div class="card-content">
+            </div>
+            <button class="card-button" onclick="openModal('blaSvgModal')">Preview Blasurca SVG</button>
+        </div>
+    </div>
+    <div id="calSvgModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('calSvgModal')">&times;</span>
+            <h2>Cal SVG Preview</h2>
+            <iframe src="SVG/cal_svg/index.html" width="100%" height="400px"></iframe>
+        </div>
+    </div>
+
+    <div id="carlSvgModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('carlSvgModal')">&times;</span>
+            <h2>Cal SVG Preview</h2>
+            <iframe src="SVG/agapito_svg/index.html" width="100%" height="400px"></iframe>
+        </div>
+    </div>
+
+    <div id="blaSvgModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('blaSvgModal')">&times;</span>
+            <h2>Cal SVG Preview</h2>
+            <iframe src="SVG/bla_svg/index.html" width="100%" height="400px"></iframe>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artful Canvas Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      margin: 20px;
+      font-size: 2.5rem;
+      color: #555;
+    }
+    .canvas-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    canvas {
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Artful Canvas Gallery</h1>
+  <div class="canvas-container">
+    <canvas id="art1" width="200" height="200"></canvas>
+    <canvas id="art2" width="200" height="200"></canvas>
+    <canvas id="art3" width="200" height="200"></canvas>
+    <canvas id="art4" width="200" height="200"></canvas>
+    <canvas id="art5" width="200" height="200"></canvas>
+    <canvas id="art6" width="200" height="200"></canvas>
+    <canvas id="art7" width="200" height="200"></canvas>
+    <canvas id="art8" width="200" height="200"></canvas>
+  </div>
+
+  <script>
+    function drawGradientCircle(ctx) {
+      const gradient = ctx.createRadialGradient(100, 100, 10, 100, 100, 80);
+      gradient.addColorStop(0, '#ff8c00');
+      gradient.addColorStop(1, '#ff4500');
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(100, 100, 80, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawWaves(ctx) {
+      ctx.strokeStyle = '#1e90ff';
+      ctx.lineWidth = 4;
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, 50 + i * 20);
+        for (let x = 0; x <= 200; x += 10) {
+          ctx.lineTo(x, 50 + i * 20 + Math.sin((x + i * 40) * 0.1) * 10);
+        }
+        ctx.stroke();
+      }
+    }
+
+    function drawSunset(ctx) {
+      const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+      gradient.addColorStop(0, '#ff7f50');
+      gradient.addColorStop(0.5, '#ff6347');
+      gradient.addColorStop(1, '#2e2e2e');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 200, 200);
+      
+      ctx.fillStyle = 'yellow';
+      ctx.beginPath();
+      ctx.arc(100, 150, 40, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawStarrySky(ctx) {
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, 200, 200);
+      ctx.fillStyle = 'white';
+      for (let i = 0; i < 50; i++) {
+        const x = Math.random() * 200;
+        const y = Math.random() * 200;
+        const radius = Math.random() * 2;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function drawAbstract(ctx) {
+      ctx.strokeStyle = '#e63946';
+      ctx.lineWidth = 6;
+      for (let i = 0; i < 10; i++) {
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * 200, Math.random() * 200);
+        ctx.lineTo(Math.random() * 200, Math.random() * 200);
+        ctx.stroke();
+      }
+    }
+
+    function drawMountain(ctx) {
+      const gradient = ctx.createLinearGradient(0, 200, 0, 50);
+      gradient.addColorStop(0, '#6a994e');
+      gradient.addColorStop(1, '#386641');
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.moveTo(0, 200);
+      ctx.lineTo(100, 50);
+      ctx.lineTo(200, 200);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function drawOcean(ctx) {
+      ctx.fillStyle = '#0077b6';
+      ctx.fillRect(0, 0, 200, 200);
+      ctx.strokeStyle = 'white';
+      for (let i = 0; i < 10; i++) {
+        ctx.beginPath();
+        ctx.arc(100, 100, 20 + i * 10, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+
+    function drawMandala(ctx) {
+      ctx.strokeStyle = '#8338ec';
+      ctx.lineWidth = 2;
+      for (let i = 0; i < 10; i++) {
+        ctx.beginPath();
+        ctx.arc(100, 100, i * 10, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = '#3a86ff';
+      for (let i = 0; i < 10; i++) {
+        ctx.beginPath();
+        ctx.arc(100, 100, 100, 0, (Math.PI * 2) * (i / 10));
+        ctx.lineTo(100, 100);
+        ctx.stroke();
+      }
+    }
+
+    const artFunctions = [
+      drawGradientCircle,
+      drawWaves,
+      drawSunset,
+      drawStarrySky,
+      drawAbstract,
+      drawMountain,
+      drawOcean,
+      drawMandala
+    ];
+
+    document.querySelectorAll('canvas').forEach((canvas, index) => {
+      const ctx = canvas.getContext('2d');
+      artFunctions[index](ctx);
+    });
+  </script>
+</body>
+</html>
