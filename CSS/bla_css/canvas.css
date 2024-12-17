@@ -1,0 +1,83 @@
+/* Body Background */
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: 'white';
+    text-align: center;
+    padding: 20px;
+
+    transition: background-color 0.5s ease; /* Smooth transition */
+    }
+
+    /* Style for Canvas Elements */
+    canvas {
+    border: 1px solid #ccc;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
+    }
+
+    /* Hover Effect on Canvas */
+    canvas:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    cursor: pointer; /* Change cursor to pointer */
+    }
+
+    /* Canvas Hover Effect for Changing Body Background */
+    #art1:hover ~ body,
+    #art2:hover ~ body,
+    #art3:hover ~ body,
+    #art4:hover ~ body,
+    #art5:hover ~ body,
+    #art6:hover ~ body,
+    #art7:hover ~ body,
+    #art8:hover ~ body {
+    background-color: black; /* Change to a different color on hover */
+}
+
+  
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Create a grid for canvas elements */
+.canvas-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Space between canvases */
+    justify-content: center;
+    max-width: 900px; /* Max width of the container */
+    margin: 0 auto; /* Center the container */
+    padding-bottom: 20px;
+}
+
+  /* Style each canvas element */
+canvas {
+    background-color: #fff;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+  }
+
+  /* Hover effect */
+canvas:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+
+/* CSS for popup text */
+#tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none; /* Hidden by default */
+    pointer-events: none; /* Avoid interfering with mouse events */
+  }
+  
+  canvas {
+    margin: 10px;
+    cursor: pointer;
+  }
